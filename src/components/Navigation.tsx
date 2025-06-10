@@ -16,6 +16,9 @@ const Navigation = () => {
     navigate('/');
   };
 
+  // Only show login/logout for admin users
+  const isAdmin = user?.role === 'admin';
+
   return (
     <nav className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +31,7 @@ const Navigation = () => {
           </Link>
 
           <div className="flex items-center space-x-4">
-            {user ? (
+            {isAdmin ? (
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <User size={16} />
@@ -45,9 +48,9 @@ const Navigation = () => {
                 </Button>
               </div>
             ) : (
-              <Link to="/login">
+              <Link to="/admin-login">
                 <Button className="business-gradient hover:opacity-90 transition-opacity">
-                  Login
+                  Admin Login
                 </Button>
               </Link>
             )}
