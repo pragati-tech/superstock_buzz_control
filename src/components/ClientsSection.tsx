@@ -1,12 +1,14 @@
 
+import { Link } from "react-router-dom";
+
 const ClientsSection = () => {
   const clients = [
-    { name: "Tanishq", logo: "💎", description: "Premium Jewelry" },
-    { name: "Titan", logo: "⌚", description: "Luxury Watches" },
-    { name: "Mia", logo: "👜", description: "Fashion Accessories" },
-    { name: "Fastrack", logo: "🕶️", description: "Youth Lifestyle" },
-    { name: "Sonata", logo: "⏰", description: "Timepieces" },
-    { name: "Skinn", logo: "🌟", description: "Fragrances" },
+    { name: "Tanishq", logo: "💎", description: "Premium Jewelry", path: "/brands/tanishq" },
+    { name: "Titan", logo: "⌚", description: "Luxury Watches", path: "/brands/titan" },
+    { name: "Mia", logo: "👜", description: "Fashion Accessories", path: "/brands/mia" },
+    { name: "Fastrack", logo: "🕶️", description: "Youth Lifestyle", path: "/brands/fastrack" },
+    { name: "Sonata", logo: "⏰", description: "Timepieces", path: "/brands/sonata" },
+    { name: "Skinn", logo: "🌟", description: "Fragrances", path: "/brands/skinn" },
   ];
 
   return (
@@ -23,8 +25,9 @@ const ClientsSection = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {clients.map((client, index) => (
-            <div 
-              key={client.name} 
+            <Link 
+              key={client.name}
+              to={client.path}
               className="text-center group cursor-pointer transform transition-all duration-300 hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -33,7 +36,7 @@ const ClientsSection = () => {
                 <h3 className="font-semibold text-gray-900 text-lg">{client.name}</h3>
                 <p className="text-sm text-gray-500 mt-1">{client.description}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

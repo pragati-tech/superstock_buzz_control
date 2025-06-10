@@ -9,6 +9,12 @@ import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import TanishqPage from "./pages/TanishqPage";
+import TitanPage from "./pages/TitanPage";
+import MiaPage from "./pages/MiaPage";
+import FastrackPage from "./pages/FastrackPage";
+import SonataPage from "./pages/SonataPage";
+import SkinnPage from "./pages/SkinnPage";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +29,12 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/user" element={<UserDashboard />} />
+          <Route path="/brands/tanishq" element={<TanishqPage />} />
+          <Route path="/brands/titan" element={<TitanPage />} />
+          <Route path="/brands/mia" element={<MiaPage />} />
+          <Route path="/brands/fastrack" element={<FastrackPage />} />
+          <Route path="/brands/sonata" element={<SonataPage />} />
+          <Route path="/brands/skinn" element={<SkinnPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
