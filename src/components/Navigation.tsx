@@ -16,7 +16,6 @@ const Navigation = () => {
     navigate('/');
   };
 
-  // Only show login/logout for admin users
   const isAdmin = user?.role === 'admin';
 
   return (

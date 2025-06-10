@@ -92,9 +92,11 @@ const TitanPage = () => {
                 Ultra-slim watches that redefine elegance. The world's slimmest watch collection 
                 that combines style with sophistication.
               </p>
-              <Button className="business-gradient">
-                Explore Edge
-              </Button>
+              <Link to="/brands/titan/edge">
+                <Button className="business-gradient">
+                  Explore Edge
+                </Button>
+              </Link>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4">Titan Raga</h3>
@@ -102,15 +104,17 @@ const TitanPage = () => {
                 Exclusively designed for women, featuring elegant designs that complement 
                 every woman's unique style and personality.
               </p>
-              <Button className="business-gradient">
-                Explore Raga
-              </Button>
+              <Link to="/brands/titan/raga">
+                <Button className="business-gradient">
+                  Explore Raga
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="text-center">
-          <Link to="/login">
+          <Link to="/product-catalog">
             <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
               Access Product Catalog
             </Button>

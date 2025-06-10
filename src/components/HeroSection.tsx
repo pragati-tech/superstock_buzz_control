@@ -1,6 +1,5 @@
 
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -17,12 +16,7 @@ const HeroSection = () => {
             Your trusted partner for premium brands like Tanishq, Titan, and Mia. 
             Delivering excellence through innovative inventory management and seamless communication.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Link to="/login">
-              <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300 transform hover:scale-105">
-                Client Portal
-              </Button>
-            </Link>
+          <div className="flex justify-center animate-fade-in">
             <Button variant="outline" size="lg" className="border-business-500 text-business-600 hover:bg-business-50">
               Learn More
             </Button>

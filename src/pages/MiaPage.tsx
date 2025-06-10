@@ -92,9 +92,11 @@ const MiaPage = () => {
                 Stylish handbags that perfectly complement your outfit. From casual totes 
                 to elegant evening bags, find the perfect accessory.
               </p>
-              <Button className="business-gradient">
-                Explore Handbags
-              </Button>
+              <Link to="/brands/mia/handbags">
+                <Button className="business-gradient">
+                  Explore Handbags
+                </Button>
+              </Link>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4">Fashion Jewelry</h3>
@@ -110,7 +112,7 @@ const MiaPage = () => {
         </div>
 
         <div className="text-center">
-          <Link to="/login">
+          <Link to="/product-catalog">
             <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
               Access Product Catalog
             </Button>

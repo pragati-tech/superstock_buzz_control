@@ -92,9 +92,11 @@ const FastrackPage = () => {
                 Bold and stylish watches that make a statement. From digital sports watches 
                 to trendy analog designs for every young personality.
               </p>
-              <Button className="business-gradient">
-                Explore Watches
-              </Button>
+              <Link to="/brands/fastrack/watches">
+                <Button className="business-gradient">
+                  Explore Watches
+                </Button>
+              </Link>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4">Sunglasses</h3>
@@ -110,7 +112,7 @@ const FastrackPage = () => {
         </div>
 
         <div className="text-center">
-          <Link to="/login">
+          <Link to="/product-catalog">
             <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
               Access Product Catalog
             </Button>

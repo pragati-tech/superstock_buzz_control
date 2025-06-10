@@ -92,9 +92,11 @@ const TanishqPage = () => {
                 Exquisite bridal jewelry sets that make your special day even more memorable. 
                 From traditional temple jewelry to contemporary designs.
               </p>
-              <Button className="business-gradient">
-                Explore Bridal
-              </Button>
+              <Link to="/brands/tanishq/bridal">
+                <Button className="business-gradient">
+                  Explore Bridal
+                </Button>
+              </Link>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4">Diamond Jewelry</h3>
@@ -102,15 +104,17 @@ const TanishqPage = () => {
                 Stunning diamond jewelry collection featuring rings, necklaces, earrings, 
                 and bracelets with certified diamonds.
               </p>
-              <Button className="business-gradient">
-                Explore Diamonds
-              </Button>
+              <Link to="/brands/tanishq/diamonds">
+                <Button className="business-gradient">
+                  Explore Diamonds
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="text-center">
-          <Link to="/login">
+          <Link to="/product-catalog">
             <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
               Access Product Catalog
             </Button>
