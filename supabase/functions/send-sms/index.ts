@@ -30,12 +30,12 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error('Missing Twilio configuration');
     }
 
-    // Updated phone numbers with the real number
+    // Updated phone numbers with the correct format
     const phoneNumbers: { [key: string]: string[] } = {
-      'all': ['+18356845626'],
-      'tanishq': ['+18356845626'],
-      'titan': ['+18356845626'],
-      'mia': ['+18356845626']
+      'all': ['+918356845626'],
+      'tanishq': ['+918356845626'],
+      'titan': ['+918356845626'],
+      'mia': ['+918356845626']
     };
 
     const recipients = phoneNumbers[recipientType] || phoneNumbers['all'];
