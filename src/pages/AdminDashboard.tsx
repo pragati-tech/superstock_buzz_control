@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/Navigation";
 import { Send, Users, MessageSquare } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const AdminDashboard = () => {
   const [user, setUser] = useState<any>(null);
@@ -45,14 +46,30 @@ const AdminDashboard = () => {
 
     setIsLoading(true);
 
-    // Simulate SMS sending
-    setTimeout(() => {
+    try {
+      console.log('Sending SMS via Twilio...');
+      
+      const { data, error } = await supabase.functions.invoke('send-sms', {
+        body: {
+          message: message.trim(),
+          recipientType
+        }
+      });
+
+      if (error) {
+        console.error('Supabase function error:', error);
+        throw error;
+      }
+
+      console.log('SMS sent successfully:', data);
+
       const newMessage = {
         id: Date.now(),
         content: message,
         recipientType,
         timestamp: new Date().toISOString(),
-        sender: user?.name || 'Admin'
+        sender: user?.name || 'Admin',
+        messagesSent: data.messagesSent || 0
       };
 
       const updatedHistory = [newMessage, ...messageHistory];
@@ -65,13 +82,21 @@ const AdminDashboard = () => {
       localStorage.setItem('userMessages', JSON.stringify(userMessages));
 
       toast({
-        title: "Message Sent Successfully",
-        description: `SMS sent to ${recipientType === 'all' ? 'all clients' : recipientType}`,
+        title: "SMS Sent Successfully",
+        description: `SMS sent to ${data.recipients || 0} recipients via Twilio`,
       });
 
       setMessage("");
+    } catch (error: any) {
+      console.error('Error sending SMS:', error);
+      toast({
+        title: "Failed to Send SMS",
+        description: error.message || "An error occurred while sending the SMS",
+        variant: "destructive"
+      });
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   if (!user) {
@@ -90,7 +115,7 @@ const AdminDashboard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-          <p className="text-gray-600">Manage client communications and broadcast messages</p>
+          <p className="text-gray-600">Manage client communications and broadcast SMS messages via Twilio</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 mb-8">
@@ -114,7 +139,7 @@ const AdminDashboard = () => {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <Send className="w-5 h-5" />
-                <span>Send SMS Broadcast</span>
+                <span>Send SMS Broadcast via Twilio</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -138,7 +163,7 @@ const AdminDashboard = () => {
                     id="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Enter your message here..."
+                    placeholder="Enter your SMS message here..."
                     className="min-h-[120px]"
                     required
                   />
@@ -151,7 +176,7 @@ const AdminDashboard = () => {
                   className="w-full business-gradient hover:opacity-90"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Sending..." : "Send SMS"}
+                  {isLoading ? "Sending via Twilio..." : "Send SMS via Twilio"}
                 </Button>
               </form>
             </CardContent>
@@ -176,7 +201,12 @@ const AdminDashboard = () => {
                           {new Date(msg.timestamp).toLocaleString()}
                         </span>
                       </div>
-                      <p className="text-gray-700">{msg.content}</p>
+                      <p className="text-gray-700 mb-2">{msg.content}</p>
+                      {msg.messagesSent && (
+                        <p className="text-xs text-green-600">
+                          ✓ Sent to {msg.messagesSent} recipients via Twilio
+                        </p>
+                      )}
                     </div>
                   ))
                 )}
