@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -47,7 +46,7 @@ const AdminDashboard = () => {
     setIsLoading(true);
 
     try {
-      console.log('Sending SMS via Twilio...');
+      console.log('Sending SMS via MSG91...');
       
       const { data, error } = await supabase.functions.invoke('send-sms', {
         body: {
@@ -83,7 +82,7 @@ const AdminDashboard = () => {
 
       toast({
         title: "SMS Sent Successfully",
-        description: `SMS sent to ${data.recipients || 0} recipients via Twilio`,
+        description: `SMS sent to ${data.recipients || 0} recipients via MSG91`,
       });
 
       setMessage("");
@@ -115,7 +114,7 @@ const AdminDashboard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-          <p className="text-gray-600">Manage client communications and broadcast SMS messages via Twilio</p>
+          <p className="text-gray-600">Manage client communications and broadcast SMS messages via MSG91</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 mb-8">
@@ -139,7 +138,7 @@ const AdminDashboard = () => {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <Send className="w-5 h-5" />
-                <span>Send SMS Broadcast via Twilio</span>
+                <span>Send SMS Broadcast via MSG91</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -176,7 +175,7 @@ const AdminDashboard = () => {
                   className="w-full business-gradient hover:opacity-90"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Sending via Twilio..." : "Send SMS via Twilio"}
+                  {isLoading ? "Sending via MSG91..." : "Send SMS via MSG91"}
                 </Button>
               </form>
             </CardContent>
@@ -204,7 +203,7 @@ const AdminDashboard = () => {
                       <p className="text-gray-700 mb-2">{msg.content}</p>
                       {msg.messagesSent && (
                         <p className="text-xs text-green-600">
-                          ✓ Sent to {msg.messagesSent} recipients via Twilio
+                          ✓ Sent to {msg.messagesSent} recipients via MSG91
                         </p>
                       )}
                     </div>
