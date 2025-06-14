@@ -25,12 +25,16 @@ const handler = async (req: Request): Promise<Response> => {
     const templateId = Deno.env.get('MSG91_TEMPLATE_ID');
 
     if (!msg91ApiKey) {
+      console.error('MSG91_API_KEY environment variable is not set');
       throw new Error('Missing MSG91 API key');
     }
 
     if (!templateId) {
+      console.error('MSG91_TEMPLATE_ID environment variable is not set');
       throw new Error('Missing MSG91 template ID');
     }
+
+    console.log('Using MSG91 Template ID:', templateId);
 
     // Phone numbers for different client types
     const phoneNumbers: { [key: string]: string[] } = {
@@ -48,7 +52,23 @@ const handler = async (req: Request): Promise<Response> => {
       // Remove the + from the phone number for MSG91
       const cleanPhoneNumber = phoneNumber.replace('+', '');
       
+      console.log(`Preparing SMS for ${phoneNumber} (cleaned: ${cleanPhoneNumber})`);
+      
       const msg91Url = `https://api.msg91.com/api/v5/flow/`;
+      
+      const requestBody = {
+        template_id: templateId,
+        short_url: "0",
+        realTimeResponse: "1",
+        recipients: [
+          {
+            mobiles: cleanPhoneNumber,
+            message: message
+          }
+        ]
+      };
+
+      console.log('MSG91 API Request:', JSON.stringify(requestBody, null, 2));
       
       const response = await fetch(msg91Url, {
         method: 'POST',
@@ -56,23 +76,17 @@ const handler = async (req: Request): Promise<Response> => {
           'Content-Type': 'application/json',
           'authkey': msg91ApiKey,
         },
-        body: JSON.stringify({
-          template_id: templateId,
-          short_url: "0",
-          realTimeResponse: "1",
-          recipients: [
-            {
-              mobiles: cleanPhoneNumber,
-              message: message
-            }
-          ]
-        }),
+        body: JSON.stringify(requestBody),
       });
 
       if (!response.ok) {
         const error = await response.text();
-        console.error(`Failed to send SMS to ${phoneNumber}:`, error);
-        throw new Error(`Failed to send SMS to ${phoneNumber}: ${error}`);
+        console.error(`Failed to send SMS to ${phoneNumber}:`, {
+          status: response.status,
+          statusText: response.statusText,
+          error: error
+        });
+        throw new Error(`Failed to send SMS to ${phoneNumber}: ${response.status} - ${error}`);
       }
 
       const result = await response.json();
@@ -82,14 +96,15 @@ const handler = async (req: Request): Promise<Response> => {
 
     const results = await Promise.all(smsPromises);
     
-    console.log('All SMS messages sent successfully via MSG91');
+    console.log('All SMS messages sent successfully via MSG91, results:', results);
 
     return new Response(
       JSON.stringify({ 
         success: true, 
         messagesSent: results.length,
         recipients: recipients.length,
-        service: 'MSG91'
+        service: 'MSG91',
+        results: results
       }),
       {
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
@@ -99,7 +114,10 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error('Error sending SMS via MSG91:', error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: error.message,
+        service: 'MSG91'
+      }),
       {
         status: 500,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
