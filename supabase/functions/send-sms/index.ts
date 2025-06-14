@@ -22,9 +22,14 @@ const handler = async (req: Request): Promise<Response> => {
     console.log('SMS request received:', { message, recipientType });
 
     const msg91ApiKey = Deno.env.get('MSG91_API_KEY');
+    const templateId = Deno.env.get('MSG91_TEMPLATE_ID');
 
     if (!msg91ApiKey) {
       throw new Error('Missing MSG91 API key');
+    }
+
+    if (!templateId) {
+      throw new Error('Missing MSG91 template ID');
     }
 
     // Phone numbers for different client types
@@ -52,7 +57,7 @@ const handler = async (req: Request): Promise<Response> => {
           'authkey': msg91ApiKey,
         },
         body: JSON.stringify({
-          template_id: "YOUR_TEMPLATE_ID", // You'll need to create a template in MSG91
+          template_id: templateId,
           short_url: "0",
           realTimeResponse: "1",
           recipients: [
