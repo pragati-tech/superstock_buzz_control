@@ -39,9 +39,14 @@ const handler = async (req: Request): Promise<Response> => {
     // Phone numbers for different client types
     const phoneNumbers: { [key: string]: string[] } = {
       'all': ['+918356845626', '+919205757587', '+919479590297'],
+      // Original categories
       'tanishq': ['+918356845626'],
       'titan': ['+919205757587'],
-      'mia': ['+919479590297']
+      'mia': ['+919479590297'],
+      // New business categories
+      'distributors': ['+918356845626'], // NESTLE, REO, Havells, nestle profer
+      'distributor-superstockists': ['+919205757587'], // Titan, Sonata, Fastrack, Dolycats
+      'exclusive-stores': ['+919479590297'], // Titan world, Helios, Fastrack store, Nescafe kiosks, Mia by Tanishq
     };
 
     const recipients = phoneNumbers[recipientType] || phoneNumbers['all'];

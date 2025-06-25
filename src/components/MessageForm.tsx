@@ -41,9 +41,16 @@ const MessageForm = ({ onSendMessage, isLoading }: MessageFormProps) => {
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-business-500"
             >
               <option value="all">All Clients</option>
-              <option value="tanishq">Tanishq Clients</option>
-              <option value="titan">Titan Clients</option>
-              <option value="mia">Mia Clients</option>
+              <optgroup label="Brand Categories">
+                <option value="tanishq">Tanishq Clients</option>
+                <option value="titan">Titan Clients</option>
+                <option value="mia">Mia Clients</option>
+              </optgroup>
+              <optgroup label="Business Categories">
+                <option value="distributors">Distributors (NESTLE, REO, Havells, Nestle Profer)</option>
+                <option value="distributor-superstockists">Distributor Superstockists (Titan, Sonata, Fastrack, Dolycats)</option>
+                <option value="exclusive-stores">Exclusive Stores (Titan World, Helios, Fastrack Store, Nescafe Kiosks, Mia by Tanishq)</option>
+              </optgroup>
             </select>
           </div>
           <div className="space-y-2">
