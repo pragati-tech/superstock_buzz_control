@@ -47,9 +47,9 @@ const MessageForm = ({ onSendMessage, isLoading }: MessageFormProps) => {
                 <option value="mia">Mia Clients</option>
               </optgroup>
               <optgroup label="Business Categories">
-                <option value="distributors">Distributors (NESTLE, REO, Havells, Nestle Profer)</option>
-                <option value="distributor-superstockists">Distributor Superstockists (Titan, Sonata, Fastrack, Dolycats)</option>
-                <option value="exclusive-stores">Exclusive Stores (Titan World, Helios, Fastrack Store, Nescafe Kiosks, Mia by Tanishq)</option>
+                <option value="stockists">Stockists</option>
+                <option value="distributor">Distributor</option>
+                <option value="super-stockists">Super-Stockists</option>
               </optgroup>
             </select>
           </div>
