@@ -43,10 +43,10 @@ const handler = async (req: Request): Promise<Response> => {
       'tanishq': ['+918356845626'],
       'titan': ['+919205757587'],
       'mia': ['+919479590297'],
-      // Business categories - Section 2 bifurcations
-      'stockists': ['+918356845626'],
-      'distributor': ['+919205757587'],
-      'super-stockists': ['+919479590297']
+      // Business categories with detailed bifurcations
+      'distributor': ['+918356845626'], // NESTLE, REO, Havells, Nestle Profer
+      'super-stockists': ['+919205757587'], // Titan, Sonata, Fastrack, Dolycats
+      'stockists': ['+919479590297'] // Titan World, Helios, Fastrack Store, Nescafe Kiosks, Mia by Tanishq
     };
 
     const recipients = phoneNumbers[recipientType] || phoneNumbers['all'];
