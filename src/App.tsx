@@ -21,6 +21,15 @@ import TitanEdge from "./pages/TitanEdge";
 import TitanRaga from "./pages/TitanRaga";
 import MiaHandbags from "./pages/MiaHandbags";
 import FastrackWatches from "./pages/FastrackWatches";
+import NestlePage from "./pages/NestlePage";
+import ReoPage from "./pages/ReoPage";
+import HavellsPage from "./pages/HavellsPage";
+import NestleProferPage from "./pages/NestleProferPage";
+import DolycatsPage from "./pages/DolycatsPage";
+import TitanWorldPage from "./pages/TitanWorldPage";
+import HeliosPage from "./pages/HeliosPage";
+import FastrackStorePage from "./pages/FastrackStorePage";
+import NescafeKiosksPage from "./pages/NescafeKiosksPage";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +56,15 @@ const App = () => (
           <Route path="/brands/fastrack/watches" element={<FastrackWatches />} />
           <Route path="/brands/sonata" element={<SonataPage />} />
           <Route path="/brands/skinn" element={<SkinnPage />} />
+          <Route path="/brands/nestle" element={<NestlePage />} />
+          <Route path="/brands/reo" element={<ReoPage />} />
+          <Route path="/brands/havells" element={<HavellsPage />} />
+          <Route path="/brands/nestle-profer" element={<NestleProferPage />} />
+          <Route path="/brands/dolycats" element={<DolycatsPage />} />
+          <Route path="/brands/titan-world" element={<TitanWorldPage />} />
+          <Route path="/brands/helios" element={<HeliosPage />} />
+          <Route path="/brands/fastrack-store" element={<FastrackStorePage />} />
+          <Route path="/brands/nescafe-kiosks" element={<NescafeKiosksPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
