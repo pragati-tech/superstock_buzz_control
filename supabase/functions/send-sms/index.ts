@@ -6,7 +6,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface SMSRequest {
+interface WhatsAppRequest {
   message: string;
   recipientType: string;
 }
@@ -17,63 +17,56 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { message, recipientType }: SMSRequest = await req.json();
+    const { message, recipientType }: WhatsAppRequest = await req.json();
     
-    console.log('SMS request received:', { message, recipientType });
+    console.log('WhatsApp request received:', { message, recipientType });
 
     const msg91ApiKey = Deno.env.get('MSG91_API_KEY');
-    const templateId = Deno.env.get('MSG91_TEMPLATE_ID');
 
     if (!msg91ApiKey) {
       console.error('MSG91_API_KEY environment variable is not set');
       throw new Error('Missing MSG91 API key');
     }
 
-    if (!templateId) {
-      console.error('MSG91_TEMPLATE_ID environment variable is not set');
-      throw new Error('Missing MSG91 template ID');
-    }
+    console.log('Using MSG91 for WhatsApp messaging');
 
-    console.log('Using MSG91 Template ID:', templateId);
-
-    // Phone numbers for different client types
-    const phoneNumbers: { [key: string]: string[] } = {
-      'all': ['+918356845626', '+919205757587', '+919479590297'],
+    // WhatsApp numbers for different client types (format: country code + number without +)
+    const whatsappNumbers: { [key: string]: string[] } = {
+      'all': ['918356845626', '919205757587', '919479590297'],
       // Brand categories
-      'tanishq': ['+918356845626'],
-      'titan': ['+919205757587'],
-      'mia': ['+919479590297'],
+      'tanishq': ['918356845626'],
+      'titan': ['919205757587'],
+      'mia': ['919479590297'],
       // Business categories with detailed bifurcations
-      'distributor': ['+918356845626'], // NESTLE, REO, Havells, Nestle Profer
-      'super-stockists': ['+919205757587'], // Titan, Sonata, Fastrack, Dolycats
-      'stockists': ['+919479590297'] // Titan World, Helios, Fastrack Store, Nescafe Kiosks, Mia by Tanishq
+      'distributor': ['918356845626'], // NESTLE, REO, Havells, Nestle Profer
+      'super-stockists': ['919205757587'], // Titan, Sonata, Fastrack, Dolycats
+      'stockists': ['919479590297'] // Titan World, Helios, Fastrack Store, Nescafe Kiosks, Mia by Tanishq
     };
 
-    const recipients = phoneNumbers[recipientType] || phoneNumbers['all'];
+    const recipients = whatsappNumbers[recipientType] || whatsappNumbers['all'];
     
-    console.log('Sending SMS to recipients:', recipients);
+    console.log('Sending WhatsApp to recipients:', recipients);
 
-    const smsPromises = recipients.map(async (phoneNumber) => {
-      // Remove the + from the phone number for MSG91
-      const cleanPhoneNumber = phoneNumber.replace('+', '');
+    const whatsappPromises = recipients.map(async (whatsappNumber) => {
+      console.log(`Preparing WhatsApp for ${whatsappNumber}`);
       
-      console.log(`Preparing SMS for ${phoneNumber} (cleaned: ${cleanPhoneNumber})`);
-      
-      const msg91Url = `https://api.msg91.com/api/v5/flow/`;
+      const msg91Url = `https://api.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/`;
       
       const requestBody = {
-        template_id: templateId,
-        short_url: "0",
-        realTimeResponse: "1",
-        recipients: [
-          {
-            mobiles: cleanPhoneNumber,
-            message: message
+        integrated_number: "918882814007", // Your MSG91 WhatsApp Business number
+        content_type: "text",
+        payload: {
+          messaging_product: "whatsapp",
+          recipient_type: "individual",
+          to: whatsappNumber,
+          type: "text",
+          text: {
+            body: message
           }
-        ]
+        }
       };
 
-      console.log('MSG91 API Request:', JSON.stringify(requestBody, null, 2));
+      console.log('MSG91 WhatsApp API Request:', JSON.stringify(requestBody, null, 2));
       
       const response = await fetch(msg91Url, {
         method: 'POST',
@@ -86,29 +79,29 @@ const handler = async (req: Request): Promise<Response> => {
 
       if (!response.ok) {
         const error = await response.text();
-        console.error(`Failed to send SMS to ${phoneNumber}:`, {
+        console.error(`Failed to send WhatsApp to ${whatsappNumber}:`, {
           status: response.status,
           statusText: response.statusText,
           error: error
         });
-        throw new Error(`Failed to send SMS to ${phoneNumber}: ${response.status} - ${error}`);
+        throw new Error(`Failed to send WhatsApp to ${whatsappNumber}: ${response.status} - ${error}`);
       }
 
       const result = await response.json();
-      console.log(`SMS sent successfully to ${phoneNumber}:`, result);
+      console.log(`WhatsApp sent successfully to ${whatsappNumber}:`, result);
       return result;
     });
 
-    const results = await Promise.all(smsPromises);
+    const results = await Promise.all(whatsappPromises);
     
-    console.log('All SMS messages sent successfully via MSG91, results:', results);
+    console.log('All WhatsApp messages sent successfully via MSG91, results:', results);
 
     return new Response(
       JSON.stringify({ 
         success: true, 
         messagesSent: results.length,
         recipients: recipients.length,
-        service: 'MSG91',
+        service: 'MSG91 WhatsApp',
         results: results
       }),
       {
@@ -117,11 +110,11 @@ const handler = async (req: Request): Promise<Response> => {
     );
 
   } catch (error: any) {
-    console.error('Error sending SMS via MSG91:', error);
+    console.error('Error sending WhatsApp via MSG91:', error);
     return new Response(
       JSON.stringify({ 
         error: error.message,
-        service: 'MSG91'
+        service: 'MSG91 WhatsApp'
       }),
       {
         status: 500,

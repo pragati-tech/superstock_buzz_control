@@ -48,7 +48,7 @@ const AdminDashboard = () => {
     setIsLoading(true);
 
     try {
-      console.log('Sending SMS via MSG91...');
+      console.log('Sending WhatsApp via MSG91...');
       
       const { data, error } = await supabase.functions.invoke('send-sms', {
         body: {
@@ -62,7 +62,7 @@ const AdminDashboard = () => {
         throw error;
       }
 
-      console.log('SMS sent successfully:', data);
+      console.log('WhatsApp sent successfully:', data);
 
       const newMessage: MessageHistoryItem = {
         id: Date.now(),
@@ -83,14 +83,14 @@ const AdminDashboard = () => {
       localStorage.setItem('userMessages', JSON.stringify(userMessages));
 
       toast({
-        title: "SMS Sent Successfully",
-        description: `SMS sent to ${data.recipients || 0} recipients via MSG91`,
+        title: "WhatsApp Sent Successfully",
+        description: `WhatsApp message sent to ${data.recipients || 0} recipients via MSG91`,
       });
     } catch (error: any) {
-      console.error('Error sending SMS:', error);
+      console.error('Error sending WhatsApp:', error);
       toast({
-        title: "Failed to Send SMS",
-        description: error.message || "An error occurred while sending the SMS",
+        title: "Failed to Send WhatsApp",
+        description: error.message || "An error occurred while sending the WhatsApp message",
         variant: "destructive"
       });
     } finally {
@@ -108,7 +108,7 @@ const AdminDashboard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-          <p className="text-gray-600">Manage client communications and broadcast SMS messages via MSG91</p>
+          <p className="text-gray-600">Manage client communications and broadcast WhatsApp messages via MSG91</p>
         </div>
 
         <AdminStats messageCount={messageHistory.length} />

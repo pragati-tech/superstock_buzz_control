@@ -18,12 +18,12 @@ const MessageHistory = ({ messages }: MessageHistoryProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Message History</CardTitle>
+        <CardTitle>WhatsApp Message History</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4 max-h-96 overflow-y-auto">
           {messages.length === 0 ? (
-            <p className="text-gray-500 text-center py-4">No messages sent yet</p>
+            <p className="text-gray-500 text-center py-4">No WhatsApp messages sent yet</p>
           ) : (
             messages.map((msg) => (
               <div key={msg.id} className="border border-gray-200 rounded-lg p-4">
@@ -38,7 +38,7 @@ const MessageHistory = ({ messages }: MessageHistoryProps) => {
                 <p className="text-gray-700 mb-2">{msg.content}</p>
                 {msg.messagesSent && (
                   <p className="text-xs text-green-600">
-                    ✓ Sent to {msg.messagesSent} recipients via MSG91
+                    ✓ Sent to {msg.messagesSent} recipients via MSG91 WhatsApp
                   </p>
                 )}
               </div>

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Send } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 interface MessageFormProps {
   onSendMessage: (message: string, recipientType: string) => Promise<void>;
@@ -27,8 +27,8 @@ const MessageForm = ({ onSendMessage, isLoading }: MessageFormProps) => {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center space-x-2">
-          <Send className="w-5 h-5" />
-          <span>Send SMS Broadcast via MSG91</span>
+          <MessageCircle className="w-5 h-5" />
+          <span>Send WhatsApp Broadcast via MSG91</span>
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -54,17 +54,17 @@ const MessageForm = ({ onSendMessage, isLoading }: MessageFormProps) => {
             </select>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">WhatsApp Message</Label>
             <Textarea
               id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Enter your SMS message here..."
+              placeholder="Enter your WhatsApp message here..."
               className="min-h-[120px]"
               required
             />
             <p className="text-sm text-gray-500">
-              {message.length}/160 characters
+              {message.length} characters
             </p>
           </div>
           <Button 
@@ -72,7 +72,7 @@ const MessageForm = ({ onSendMessage, isLoading }: MessageFormProps) => {
             className="w-full business-gradient hover:opacity-90"
             disabled={isLoading}
           >
-            {isLoading ? "Sending via MSG91..." : "Send SMS via MSG91"}
+            {isLoading ? "Sending via MSG91 WhatsApp..." : "Send WhatsApp via MSG91"}
           </Button>
         </form>
       </CardContent>
