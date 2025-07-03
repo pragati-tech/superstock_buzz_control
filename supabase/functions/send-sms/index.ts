@@ -56,14 +56,18 @@ const handler = async (req: Request): Promise<Response> => {
     const whatsappPromises = recipients.map(async (whatsappNumber) => {
       console.log(`Preparing WhatsApp for ${whatsappNumber}`);
       
-      // Corrected MSG91 WhatsApp API endpoint
-      const msg91Url = `https://api.msg91.com/api/v5/whatsapp/send`;
+      // MSG91 WhatsApp API endpoint
+      const msg91Url = `https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/`;
       
       const requestBody = {
         template_id: msg91TemplateId,
-        mobiles: whatsappNumber,
-        VAR1: "Pragati", // or dynamic name
-        VAR2: message    // or whatever matches your template variables
+        recipients: [
+          {
+            mobiles: whatsappNumber,
+            VAR1: "Pragati",
+            VAR2: message
+          }
+        ]
       };
 
       console.log('MSG91 WhatsApp API Request:', JSON.stringify(requestBody, null, 2));
@@ -73,6 +77,7 @@ const handler = async (req: Request): Promise<Response> => {
       const response = await fetch(msg91Url, {
         method: 'POST',
         headers: {
+          'Accept': 'application/json',
           'Content-Type': 'application/json',
           'authkey': msg91ApiKey,
         },
@@ -90,6 +95,7 @@ const handler = async (req: Request): Promise<Response> => {
           response: responseText,
           url: msg91Url,
           headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json',
             'authkey': msg91ApiKey.substring(0, 10) + '...'
           }
