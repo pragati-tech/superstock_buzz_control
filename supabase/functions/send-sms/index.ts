@@ -50,11 +50,11 @@ const handler = async (req: Request): Promise<Response> => {
     const whatsappPromises = recipients.map(async (whatsappNumber) => {
       console.log(`Preparing WhatsApp for ${whatsappNumber}`);
       
-      // Updated MSG91 WhatsApp API endpoint and authentication
-      const msg91Url = `https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/`;
+      // Updated MSG91 WhatsApp API endpoint - using the correct format
+      const msg91Url = `https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/bulk_send`;
       
       const requestBody = {
-        integrated_number: "918882814007", // Your MSG91 WhatsApp Business number
+        integrated_number: "918882814007",
         content_type: "text",
         payload: {
           messaging_product: "whatsapp",
@@ -68,13 +68,13 @@ const handler = async (req: Request): Promise<Response> => {
       };
 
       console.log('MSG91 WhatsApp API Request:', JSON.stringify(requestBody, null, 2));
+      console.log('Using API Key (first 10 chars):', msg91ApiKey.substring(0, 10) + '...');
       
       const response = await fetch(msg91Url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'authkey': msg91ApiKey,
-          'accept': 'application/json',
         },
         body: JSON.stringify(requestBody),
       });
@@ -87,7 +87,12 @@ const handler = async (req: Request): Promise<Response> => {
         console.error(`Failed to send WhatsApp to ${whatsappNumber}:`, {
           status: response.status,
           statusText: response.statusText,
-          response: responseText
+          response: responseText,
+          url: msg91Url,
+          headers: {
+            'Content-Type': 'application/json',
+            'authkey': msg91ApiKey.substring(0, 10) + '...'
+          }
         });
         throw new Error(`Failed to send WhatsApp to ${whatsappNumber}: ${response.status} - ${responseText}`);
       }
