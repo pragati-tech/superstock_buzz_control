@@ -22,10 +22,16 @@ const handler = async (req: Request): Promise<Response> => {
     console.log('WhatsApp request received:', { message, recipientType });
 
     const msg91ApiKey = Deno.env.get('MSG91_API_KEY');
+    const msg91TemplateId = Deno.env.get('MSG91_TEMPLATE_ID');
 
     if (!msg91ApiKey) {
       console.error('MSG91_API_KEY environment variable is not set');
       throw new Error('Missing MSG91 API key');
+    }
+
+    if (!msg91TemplateId) {
+      console.error('MSG91_TEMPLATE_ID environment variable is not set');
+      throw new Error('Missing MSG91 Template ID');
     }
 
     console.log('Using MSG91 for WhatsApp messaging');
@@ -50,25 +56,19 @@ const handler = async (req: Request): Promise<Response> => {
     const whatsappPromises = recipients.map(async (whatsappNumber) => {
       console.log(`Preparing WhatsApp for ${whatsappNumber}`);
       
-      // Updated MSG91 WhatsApp API endpoint - using the correct format
-      const msg91Url = `https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/bulk_send`;
+      // Corrected MSG91 WhatsApp API endpoint
+      const msg91Url = `https://api.msg91.com/api/v5/whatsapp/send`;
       
       const requestBody = {
-        integrated_number: "918882814007",
-        content_type: "text",
-        payload: {
-          messaging_product: "whatsapp",
-          recipient_type: "individual",
-          to: whatsappNumber,
-          type: "text",
-          text: {
-            body: message
-          }
-        }
+        template_id: msg91TemplateId,
+        mobiles: whatsappNumber,
+        VAR1: "Pragati", // or dynamic name
+        VAR2: message    // or whatever matches your template variables
       };
 
       console.log('MSG91 WhatsApp API Request:', JSON.stringify(requestBody, null, 2));
       console.log('Using API Key (first 10 chars):', msg91ApiKey.substring(0, 10) + '...');
+      console.log('Using Template ID:', msg91TemplateId);
       
       const response = await fetch(msg91Url, {
         method: 'POST',
