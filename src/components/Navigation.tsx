@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -15,11 +14,7 @@ const Navigation = () => {
           </Link>
 
           <div className="flex items-center space-x-4">
-            <Link to="/admin">
-              <Button className="business-gradient hover:opacity-90 transition-opacity">
-                Admin Dashboard
-              </Button>
-            </Link>
+            {/* Navigation items can be added here in the future */}
           </div>
         </div>
       </div>
