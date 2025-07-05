@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Lightbulb, Zap, Settings } from "lucide-react";
+import { ArrowLeft, Zap, Home, Shield } from "lucide-react";
 
 const HavellsPage = () => {
   return (
@@ -18,40 +18,40 @@ const HavellsPage = () => {
         </Link>
 
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">💡</div>
+          <div className="text-6xl mb-4">⚡</div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Havells
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leading electrical solutions for homes and industries
+            Leading electrical equipment company providing innovative solutions for modern homes and businesses
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
-              <Lightbulb className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Lighting Solutions</CardTitle>
+              <Zap className="h-8 w-8 text-business-600 mb-2" />
+              <CardTitle>Electrical Solutions</CardTitle>
               <CardDescription>
-                Energy-efficient lighting for every space
+                Comprehensive range of electrical products and solutions
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• LED bulbs & tubes</li>
-                <li>• Designer fixtures</li>
-                <li>• Smart lighting</li>
-                <li>• Industrial lighting</li>
+                <li>• Switches & sockets</li>
+                <li>• Wires & cables</li>
+                <li>• Circuit protection</li>
+                <li>• Industrial equipment</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
-              <Zap className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Electrical Appliances</CardTitle>
+              <Home className="h-8 w-8 text-business-600 mb-2" />
+              <CardTitle>Home Appliances</CardTitle>
               <CardDescription>
-                Modern electrical appliances for daily use
+                Modern appliances designed for comfortable living
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -59,25 +59,25 @@ const HavellsPage = () => {
                 <li>• Fans & air coolers</li>
                 <li>• Water heaters</li>
                 <li>• Kitchen appliances</li>
-                <li>• Home automation</li>
+                <li>• Lighting solutions</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
-              <Settings className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Electrical Infrastructure</CardTitle>
+              <Shield className="h-8 w-8 text-business-600 mb-2" />
+              <CardTitle>Quality & Safety</CardTitle>
               <CardDescription>
-                Complete electrical infrastructure solutions
+                Commitment to safety standards and reliable performance
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Wires & cables</li>
-                <li>• Switches & sockets</li>
-                <li>• MCBs & distribution</li>
-                <li>• Solar solutions</li>
+                <li>• ISI certified products</li>
+                <li>• Safety standards</li>
+                <li>• Warranty support</li>
+                <li>• Service network</li>
               </ul>
             </CardContent>
           </Card>

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Zap, Gamepad2, Headphones } from "lucide-react";
+import { ArrowLeft, Zap, Users, Sparkles } from "lucide-react";
 
 const FastrackPage = () => {
   return (
@@ -18,12 +18,12 @@ const FastrackPage = () => {
         </Link>
 
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">🕶️</div>
+          <div className="text-6xl mb-4">⚡</div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Fastrack
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            India's coolest youth lifestyle brand offering trendy watches, sunglasses, and accessories
+            Cool and trendy lifestyle accessories designed for the energetic youth
           </p>
         </div>
 
@@ -31,66 +31,66 @@ const FastrackPage = () => {
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <Zap className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Youth Lifestyle</CardTitle>
+              <CardTitle>Youth-Centric Design</CardTitle>
               <CardDescription>
-                Bold and trendy accessories designed for the energetic youth
+                Bold and vibrant designs that resonate with young energy
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Trendy watches</li>
-                <li>• Stylish sunglasses</li>
-                <li>• Cool backpacks</li>
-                <li>• Tech accessories</li>
+                <li>• Colorful watch designs</li>
+                <li>• Trendy accessories</li>
+                <li>• Bold patterns</li>
+                <li>• Sports-inspired styles</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
-              <Gamepad2 className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Cool & Trendy</CardTitle>
+              <Users className="h-8 w-8 text-business-600 mb-2" />
+              <CardTitle>Lifestyle Products</CardTitle>
               <CardDescription>
-                Stay ahead of trends with our constantly evolving product range
+                Complete range of accessories for an active lifestyle
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Latest designs</li>
-                <li>• Vibrant colors</li>
-                <li>• Youth-centric styling</li>
-                <li>• Affordable pricing</li>
+                <li>• Watches & smartwatches</li>
+                <li>• Sunglasses</li>
+                <li>• Bags & backpacks</li>
+                <li>• Belts & wallets</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
-              <Headphones className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Tech Accessories</CardTitle>
+              <Sparkles className="h-8 w-8 text-business-600 mb-2" />
+              <CardTitle>Affordable Style</CardTitle>
               <CardDescription>
-                Modern tech accessories that complement your digital lifestyle
+                Trendy fashion accessories at pocket-friendly prices
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Bluetooth headphones</li>
-                <li>• Power banks</li>
-                <li>• Phone accessories</li>
-                <li>• Gaming gear</li>
+                <li>• Value for money</li>
+                <li>• Quality materials</li>
+                <li>• Durability tested</li>
+                <li>• Style guarantee</li>
               </ul>
             </CardContent>
           </Card>
         </div>
 
         <div className="bg-white rounded-2xl p-8 mb-12 shadow-lg">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Popular Categories</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Popular Collections</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Watches</h3>
+              <h3 className="text-xl font-semibold mb-4">Fastrack Watches</h3>
               <p className="text-gray-600 mb-4">
-                Bold and stylish watches that make a statement. From digital sports watches 
-                to trendy analog designs for every young personality.
+                Explore our dynamic collection of watches designed for the young and energetic. 
+                From digital sports watches to trendy analog designs.
               </p>
               <Link to="/brands/fastrack/watches">
                 <Button className="business-gradient">
@@ -99,13 +99,13 @@ const FastrackPage = () => {
               </Link>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-4">Sunglasses</h3>
+              <h3 className="text-xl font-semibold mb-4">Accessories Range</h3>
               <p className="text-gray-600 mb-4">
-                Cool sunglasses that protect your eyes while keeping you stylish. 
-                Various shapes and colors to match your vibe.
+                Complete your style with our range of sunglasses, bags, belts, 
+                and other trendy accessories perfect for the modern youth.
               </p>
               <Button className="business-gradient">
-                Explore Sunglasses
+                Explore Accessories
               </Button>
             </div>
           </div>

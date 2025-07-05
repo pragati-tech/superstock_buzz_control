@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Coffee, Zap, Award } from "lucide-react";
+import { ArrowLeft, Coffee, Heart, Award } from "lucide-react";
 
 const NestlePage = () => {
   return (
@@ -20,10 +20,10 @@ const NestlePage = () => {
         <div className="text-center mb-12">
           <div className="text-6xl mb-4">☕</div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            NESTLE
+            Nestle
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Premium coffee and beverage solutions for your daily refreshment needs
+            World's leading food and beverage company bringing quality nutrition to families worldwide
           </p>
         </div>
 
@@ -31,35 +31,35 @@ const NestlePage = () => {
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <Coffee className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Coffee Products</CardTitle>
+              <CardTitle>Beverages</CardTitle>
               <CardDescription>
-                Premium coffee blends and instant coffee solutions
+                Premium coffee, tea, and beverage solutions for every taste
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Nescafe Classic</li>
-                <li>• Nescafe Gold</li>
-                <li>• Cold Coffee</li>
-                <li>• Specialty blends</li>
+                <li>• Nescafe coffee range</li>
+                <li>• Nestea beverages</li>
+                <li>• Hot chocolate mixes</li>
+                <li>• Specialty drinks</li>
               </ul>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
-              <Zap className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Beverages</CardTitle>
+              <Heart className="h-8 w-8 text-business-600 mb-2" />
+              <CardTitle>Nutrition & Health</CardTitle>
               <CardDescription>
-                Refreshing beverages for every occasion
+                Nutritious food products supporting healthy lifestyles
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Milo energy drink</li>
-                <li>• Nesfruta juices</li>
-                <li>• Maggi soups</li>
-                <li>• Health drinks</li>
+                <li>• Baby nutrition</li>
+                <li>• Health supplements</li>
+                <li>• Dairy products</li>
+                <li>• Wellness foods</li>
               </ul>
             </CardContent>
           </Card>
@@ -67,17 +67,17 @@ const NestlePage = () => {
           <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <Award className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Quality Assurance</CardTitle>
+              <CardTitle>Quality Standards</CardTitle>
               <CardDescription>
-                Trusted quality backed by global standards
+                Commitment to highest quality and safety standards globally
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• International standards</li>
-                <li>• Fresh ingredients</li>
-                <li>• Consistent quality</li>
-                <li>• Trusted brand</li>
+                <li>• Global quality standards</li>
+                <li>• Safety certifications</li>
+                <li>• Sustainable sourcing</li>
+                <li>• Innovation focus</li>
               </ul>
             </CardContent>
           </Card>
