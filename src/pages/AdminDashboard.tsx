@@ -30,7 +30,7 @@ const AdminDashboard = () => {
         content: message,
         recipientType,
         timestamp: new Date().toISOString(),
-        sender: "Admin",
+        sender: "Dashboard User",
         messagesSent: Math.floor(Math.random() * 50) + 10 // Random number for demo
       };
       
@@ -51,10 +51,10 @@ const AdminDashboard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Admin Dashboard
+            Message Dashboard
           </h1>
           <p className="text-xl text-gray-600">
-            Manage WhatsApp broadcasts and view message history
+            Send WhatsApp broadcasts and view message history
           </p>
         </div>
 
