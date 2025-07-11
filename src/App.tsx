@@ -23,7 +23,7 @@ import NestlePage from "./pages/NestlePage";
 import ReoPage from "./pages/ReoPage";
 import HavellsPage from "./pages/HavellsPage";
 import NestleProferPage from "./pages/NestleProferPage";
-import DolycatsPage from "./pages/DolycatsPage";
+import PolycabPage from "./pages/Polycab";
 import TitanWorldPage from "./pages/TitanWorldPage";
 import HeliosPage from "./pages/HeliosPage";
 import FastrackStorePage from "./pages/FastrackStorePage";
@@ -56,7 +56,7 @@ const App = () => (
           <Route path="/brands/reo" element={<ReoPage />} />
           <Route path="/brands/havells" element={<HavellsPage />} />
           <Route path="/brands/nestle-profer" element={<NestleProferPage />} />
-          <Route path="/brands/dolycats" element={<DolycatsPage />} />
+          <Route path="/brands/Polycats" element={<PolycabPage />} />
           <Route path="/brands/titan-world" element={<TitanWorldPage />} />
           <Route path="/brands/helios" element={<HeliosPage />} />
           <Route path="/brands/fastrack-store" element={<FastrackStorePage />} />

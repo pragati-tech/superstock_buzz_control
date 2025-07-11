@@ -11,12 +11,12 @@ const ClientsSection = () => {
       bgGradient: "from-blue-50/80 via-indigo-50/60 to-cyan-50/80",
       shadowColor: "shadow-blue-500/20",
       brands: [
-        { name: "NESTLE", logo: "☕", description: "Coffee & Beverages", path: "/brands/nestle" },
-        { name: "REO", logo: "🏠", description: "Home Solutions", path: "/brands/reo" },
-        { name: "Havells", logo: "💡", description: "Electrical Solutions", path: "/brands/havells" },
-        { name: "Nestle Profer", logo: "🍫", description: "Professional Food", path: "/brands/nestle-profer" },
+        { name: "NESTLE", logo: "☕", description: "Since 1985", path: "/brands/nestle" },
+        { name: "REO", logo: "🏠", description: "Since 2014", path: "/brands/reo" },
+        { name: "Havells", logo: "💡", description: "Since 2014", path: "/brands/havells" },
+        { name: "Nestle Professional", logo: "🍫", description: "Since 2018", path: "/brands/nestle-profer" },
       ]
-    },
+    },  
     {
       title: "Distributor Superstockists",
       description: "Premium Lifestyle Brands",
@@ -24,10 +24,10 @@ const ClientsSection = () => {
       bgGradient: "from-purple-50/80 via-pink-50/60 to-rose-50/80",
       shadowColor: "shadow-purple-500/20",
       brands: [
-        { name: "Titan", logo: "⌚", description: "Luxury Watches", path: "/brands/titan" },
-        { name: "Sonata", logo: "⏰", description: "Timepieces", path: "/brands/sonata" },
-        { name: "Fastrack", logo: "🕶️", description: "Youth Lifestyle", path: "/brands/fastrack" },
-        { name: "Dolycats", logo: "🎯", description: "Fashion Accessories", path: "/brands/dolycats" },
+        { name: "Titan", logo: "⌚", description: "Since 1995", path: "/brands/titan" },
+        { name: "Sonata", logo: "⏰", description: "Since 1998", path: "/brands/sonata" },
+        { name: "Fastrack", logo: "🕶️", description: "Since 1999", path: "/brands/fastrack" },
+        { name: "Polycab", logo: "🎯", description: "Since 2025", path: "/brands/Polycab" },
       ]
     },
     {
@@ -37,11 +37,11 @@ const ClientsSection = () => {
       bgGradient: "from-emerald-50/80 via-teal-50/60 to-green-50/80",
       shadowColor: "shadow-emerald-500/20",
       brands: [
-        { name: "Titan World", logo: "🌟", description: "Premium Watches", path: "/brands/titan-world" },
-        { name: "Helios", logo: "⚡", description: "Watch Retail", path: "/brands/helios" },
-        { name: "Fastrack Store", logo: "🚀", description: "Youth Store", path: "/brands/fastrack-store" },
-        { name: "Nescafe Kiosks", logo: "☕", description: "Coffee Experience", path: "/brands/nescafe-kiosks" },
-        { name: "Mia by Tanishq", logo: "💎", description: "Fashion Jewelry", path: "/brands/mia" },
+        { name: "Titan World", logo: "🌟", description: "Since 2008-2018", path: "/brands/titan-world" },
+        { name: "Helios", logo: "⚡", description: "Since 2018", path: "/brands/helios" },
+        { name: "Fastrack Store", logo: "🚀", description: "Since 2018", path: "/brands/fastrack-store" },
+        { name: "Nescafe Kiosks", logo: "☕", description: "Since 2023", path: "/brands/nescafe-kiosks" },
+        { name: "Mia by Tanishq", logo: "💎", description: "Since 2024", path: "/brands/mia" },
       ]
     }
   ];
@@ -73,19 +73,19 @@ const ClientsSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Enhanced Header Section */}
-        <div className="text-center mb-24">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-business-100/80 to-business-200/80 backdrop-blur-sm px-6 py-3 rounded-full text-business-700 text-sm font-medium mb-8 shadow-lg border border-business-200/30">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-business-100/80 to-business-200/80 backdrop-blur-sm px-6 py-3 rounded-full text-business-700 text-sm font-medium mb-4 shadow-lg border border-business-200/30">
             <Sparkles className="w-5 h-5 animate-spin" style={{ animationDuration: '3s' }} />
             <span className="font-semibold">Premium Partnerships</span>
             <Star className="w-4 h-4" />
           </div>
-          <h2 className="text-6xl md:text-7xl font-extrabold text-gray-900 mb-8 leading-tight tracking-tight">
-            <span className="inline-block transform hover:scale-105 transition-transform duration-300">Trusted by</span>
-            <span className="bg-gradient-to-r from-business-600 via-business-700 to-business-800 bg-clip-text text-transparent block mt-2 drop-shadow-sm">
+          <h2 className="text-5xl md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+            <span className="inline-block transition-transform duration-300">Trusted by</span>
+            <span className="bg-gradient-to-r from-business-600 via-business-700 to-business-800 bg-clip-text text-transparent block mt-2 drop-shadow-sm mb-5">
               Premium Brands
             </span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">
             We serve as authorized partners across three key business verticals, delivering excellence 
             in distribution and retail with <span className="font-semibold text-business-700">unmatched commitment</span> to quality and service.
           </p>
@@ -96,8 +96,8 @@ const ClientsSection = () => {
           {businessCategories.map((category, categoryIndex) => (
             <div key={category.title} className="relative group">
               {/* Enhanced Category Header */}
-              <div className="text-center mb-16">
-                <div className={`inline-block bg-gradient-to-r ${category.gradient} text-white px-8 py-4 rounded-3xl font-bold text-2xl mb-6 shadow-2xl ${category.shadowColor} transform hover:scale-105 transition-all duration-300 relative overflow-hidden`}>
+              <div className="text-center mb-8  ">
+                <div className={`inline-block bg-gradient-to-r ${category.gradient} text-white px-8 py-4 rounded-xl font-bold text-2xl mb-6 shadow-2xl ${category.shadowColor} transform hover:scale-105 transition-all duration-300 relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10 flex items-center gap-3">
                     <Zap className="w-6 h-6" />
@@ -110,14 +110,13 @@ const ClientsSection = () => {
               </div>
               
               {/* Enhanced Brands Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+              <div className="grid lg:grid-cols-4  gap-8 mb-12">
                 {category.brands.map((brand, brandIndex) => (
                   <Link 
                     key={brand.name}
                     to={brand.path}
-                    className="group/card cursor-pointer transform transition-all duration-700 hover:scale-110 hover:z-10 relative"
+                    className="group/card  cursor-pointer"
                     style={{ 
-                      animationDelay: `${(categoryIndex * 0.3) + (brandIndex * 0.15)}s`,
                       animation: 'fadeInUp 1s ease-out forwards'
                     }}
                   >
@@ -130,7 +129,7 @@ const ClientsSection = () => {
                       
                       {/* Content */}
                       <div className="relative z-10">
-                        <div className="text-5xl mb-6 transform group-hover/card:scale-125 group-hover/card:rotate-12 transition-all duration-500 filter drop-shadow-lg">
+                        <div className="text-5xl mb-6 transform group-hover/card:scale-125 transition-all duration-500 filter drop-shadow-lg">
                           {brand.logo}
                         </div>
                         <h4 className="font-bold text-gray-900 text-xl mb-3 group-hover/card:text-gray-800 transition-colors duration-300 tracking-wide">
@@ -164,7 +163,7 @@ const ClientsSection = () => {
         </div>
         
         {/* Enhanced Bottom CTA Section */}
-        <div className="mt-28">
+        <div className="mt-15">
           <div className="bg-gradient-to-r from-white/90 via-business-50/90 to-white/90 backdrop-blur-lg rounded-3xl p-16 border border-white/60 shadow-2xl relative overflow-hidden">
             {/* Enhanced decorative background */}
             <div className="absolute inset-0 bg-gradient-to-br from-business-500/8 via-business-600/5 to-business-700/8 rounded-3xl"></div>

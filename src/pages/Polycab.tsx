@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Link } from "react-router-dom";
 import { ArrowLeft, Target, Sparkles, Palette } from "lucide-react";
 
-const DolycatsPage = () => {
+const PolycabPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <Navigation />
@@ -20,7 +20,7 @@ const DolycatsPage = () => {
         <div className="text-center mb-12">
           <div className="text-6xl mb-4">🎯</div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Dolycats
+            Polycab
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Trendy fashion accessories that define your unique style
@@ -97,4 +97,4 @@ const DolycatsPage = () => {
   );
 };
 
-export default DolycatsPage;
+export default PolycabPage;
