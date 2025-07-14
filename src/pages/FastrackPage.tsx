@@ -18,7 +18,6 @@ const FastrackPage = () => {
         </Link>
 
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">⚡</div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Fastrack
           </h1>
@@ -81,43 +80,7 @@ const FastrackPage = () => {
               </ul>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="bg-white rounded-2xl p-8 mb-12 shadow-lg">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Popular Collections</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Fastrack Watches</h3>
-              <p className="text-gray-600 mb-4">
-                Explore our dynamic collection of watches designed for the young and energetic. 
-                From digital sports watches to trendy analog designs.
-              </p>
-              <Link to="/brands/fastrack/watches">
-                <Button className="business-gradient">
-                  Explore Watches
-                </Button>
-              </Link>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Accessories Range</h3>
-              <p className="text-gray-600 mb-4">
-                Complete your style with our range of sunglasses, bags, belts, 
-                and other trendy accessories perfect for the modern youth.
-              </p>
-              <Button className="business-gradient">
-                Explore Accessories
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <Link to="/product-catalog">
-            <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
-              Access Product Catalog
-            </Button>
-          </Link>
-        </div>
+        </div>  
       </div>
 
       <Footer />

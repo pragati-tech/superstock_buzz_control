@@ -63,32 +63,6 @@ const NestlePage = () => {
               </ul>
             </CardContent>
           </Card>
-
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <Award className="h-8 w-8 text-business-600 mb-2" />
-              <CardTitle>Quality Standards</CardTitle>
-              <CardDescription>
-                Commitment to highest quality and safety standards globally
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Global quality standards</li>
-                <li>• Safety certifications</li>
-                <li>• Sustainable sourcing</li>
-                <li>• Innovation focus</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="text-center">
-          <Link to="/product-catalog">
-            <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
-              Access Product Catalog
-            </Button>
-          </Link>
         </div>
       </div>
 

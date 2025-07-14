@@ -16,9 +16,7 @@ import ProductCatalog from "./pages/ProductCatalog";
 import TanishqBridal from "./pages/TanishqBridal";
 import TanishqDiamonds from "./pages/TanishqDiamonds";
 import TitanEdge from "./pages/TitanEdge";
-import TitanRaga from "./pages/TitanRaga";
-import MiaHandbags from "./pages/MiaHandbags";
-import FastrackWatches from "./pages/FastrackWatches";
+import TitanRaga from "./pages/TitanRaga";    
 import NestlePage from "./pages/NestlePage";
 import ReoPage from "./pages/ReoPage";
 import HavellsPage from "./pages/HavellsPage";
@@ -47,9 +45,7 @@ const App = () => (
           <Route path="/brands/titan/edge" element={<TitanEdge />} />
           <Route path="/brands/titan/raga" element={<TitanRaga />} />
           <Route path="/brands/mia" element={<MiaPage />} />
-          <Route path="/brands/mia/handbags" element={<MiaHandbags />} />
           <Route path="/brands/fastrack" element={<FastrackPage />} />
-          <Route path="/brands/fastrack/watches" element={<FastrackWatches />} />
           <Route path="/brands/sonata" element={<SonataPage />} />
           <Route path="/brands/skinn" element={<SkinnPage />} />
           <Route path="/brands/nestle" element={<NestlePage />} />

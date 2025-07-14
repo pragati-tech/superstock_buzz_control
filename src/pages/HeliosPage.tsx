@@ -18,7 +18,6 @@ const HeliosPage = () => {
         </Link>
 
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">⚡</div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Helios
           </h1>
@@ -81,15 +80,7 @@ const HeliosPage = () => {
               </ul>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="text-center">
-          <Link to="/product-catalog">
-            <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
-              Access Product Catalog
-            </Button>
-          </Link>
-        </div>
+        </div>  
       </div>
 
       <Footer />

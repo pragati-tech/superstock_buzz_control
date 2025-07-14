@@ -47,7 +47,7 @@ const ClientsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
+    <section id="section2" className="py-10 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
       {/* Enhanced background decorative elements */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl animate-pulse"></div>
@@ -73,7 +73,7 @@ const ClientsSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Enhanced Header Section */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-business-100/80 to-business-200/80 backdrop-blur-sm px-6 py-3 rounded-full text-business-700 text-sm font-medium mb-4 shadow-lg border border-business-200/30">
             <Sparkles className="w-5 h-5 animate-spin" style={{ animationDuration: '3s' }} />
             <span className="font-semibold">Premium Partnerships</span>
@@ -92,25 +92,22 @@ const ClientsSection = () => {
         </div>
         
         {/* Enhanced Business Categories */}
-        <div className="space-y-28">
+        <div>
           {businessCategories.map((category, categoryIndex) => (
             <div key={category.title} className="relative group">
               {/* Enhanced Category Header */}
-              <div className="text-center mb-8  ">
-                <div className={`inline-block bg-gradient-to-r ${category.gradient} text-white px-8 py-4 rounded-xl font-bold text-2xl mb-6 shadow-2xl ${category.shadowColor} transform hover:scale-105 transition-all duration-300 relative overflow-hidden`}>
+              <div className="text-center mb-5  ">
+                <div className={`inline-block bg-gradient-to-r ${category.gradient} text-white px-8 py-2 rounded-xl font-bold text-2xl mb-2 shadow-2xl ${category.shadowColor} transform hover:scale-105 transition-all duration-300 relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10 flex items-center gap-3">
                     <Zap className="w-6 h-6" />
                     {category.title}
                   </span>
                 </div>
-                <p className="text-gray-600 text-xl font-medium tracking-wide">
-                  {category.description}
-                </p>
               </div>
               
               {/* Enhanced Brands Grid */}
-              <div className="grid lg:grid-cols-4  gap-8 mb-12">
+              <div className="grid lg:grid-cols-4 gap-8 mb-20">
                 {category.brands.map((brand, brandIndex) => (
                   <Link 
                     key={brand.name}
@@ -154,22 +151,21 @@ const ClientsSection = () => {
               
               {/* Enhanced Category separator */}
               {categoryIndex < businessCategories.length - 1 && (
-                <div className="flex items-center justify-center mt-20">
-                  <div className={`h-1 w-40 bg-gradient-to-r ${category.gradient} rounded-full opacity-40 shadow-lg`}></div>
-                </div>
+                <div className="flex items-center justify-center">
+                  </div>
               )}
             </div>
           ))}
         </div>
         
         {/* Enhanced Bottom CTA Section */}
-        <div className="mt-15">
+        <div className="mt-20 ">
           <div className="bg-gradient-to-r from-white/90 via-business-50/90 to-white/90 backdrop-blur-lg rounded-3xl p-16 border border-white/60 shadow-2xl relative overflow-hidden">
             {/* Enhanced decorative background */}
             <div className="absolute inset-0 bg-gradient-to-br from-business-500/8 via-business-600/5 to-business-700/8 rounded-3xl"></div>
             
             {/* Animated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse rounded-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse rounded-3xl  "></div>
             
             <div className="relative z-10 text-center">
               <div className="inline-flex items-center gap-3 bg-business-100/80 backdrop-blur-sm px-6 py-3 rounded-full text-business-700 text-sm font-semibold mb-8 shadow-lg">
@@ -189,12 +185,11 @@ const ClientsSection = () => {
               {/* Enhanced Stats */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
                 {[
-                  { number: "25+", label: "Premium Brands", icon: "⭐" },
-                  { number: "3", label: "Business Verticals", icon: "🎯" },
-                  { number: "100%", label: "Customer Satisfaction", icon: "💯" }
+                  { number: "25+", label: "Premium Brands" },
+                  { number: "3", label: "Business Verticals"},
+                  { number: "100%", label: "Customer Satisfaction"}
                 ].map((stat, index) => (
-                  <div key={stat.label} className="text-center group transform hover:scale-105 transition-all duration-300">
-                    <div className="text-6xl mb-2">{stat.icon}</div>
+                  <div key={stat.label} className="text-center group transform hover:scale-105 transition-all duration-300">  
                     <div className="text-4xl font-bold text-business-600 mb-3 group-hover:text-business-700 transition-colors duration-300">
                       {stat.number}
                     </div>

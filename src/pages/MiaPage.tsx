@@ -18,7 +18,7 @@ const MiaPage = () => {
         </Link>
 
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">👜</div>
+          <div className="text-6xl mb-4"></div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Mia
           </h1>
@@ -81,42 +81,6 @@ const MiaPage = () => {
               </ul>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="bg-white rounded-2xl p-8 mb-12 shadow-lg">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Featured Collections</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Handbag Collection</h3>
-              <p className="text-gray-600 mb-4">
-                Discover our exclusive range of handbags designed for the modern woman. 
-                From casual totes to elegant evening bags.
-              </p>
-              <Link to="/brands/mia/handbags">
-                <Button className="business-gradient">
-                  Explore Handbags
-                </Button>
-              </Link>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Accessories</h3>
-              <p className="text-gray-600 mb-4">
-                Complete your look with our stylish accessories including wallets, 
-                belts, and fashion jewelry pieces.
-              </p>
-              <Button className="business-gradient">
-                Explore Accessories
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <Link to="/product-catalog">
-            <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
-              Access Product Catalog
-            </Button>
-          </Link>
         </div>
       </div>
 

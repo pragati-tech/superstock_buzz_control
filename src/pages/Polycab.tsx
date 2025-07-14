@@ -82,14 +82,6 @@ const PolycabPage = () => {
             </CardContent>
           </Card>
         </div>
-
-        <div className="text-center">
-          <Link to="/product-catalog">
-            <Button size="lg" className="business-gradient hover:opacity-90 transition-all duration-300">
-              Access Product Catalog
-            </Button>
-          </Link>
-        </div>
       </div>
 
       <Footer />
