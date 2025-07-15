@@ -11,23 +11,23 @@ const ClientsSection = () => {
       bgGradient: "from-blue-50/80 via-indigo-50/60 to-cyan-50/80",
       shadowColor: "shadow-blue-500/20",
       brands: [
-        { name: "NESTLE", logo: "☕", description: "Since 1985", path: "/brands/nestle" },
-        { name: "REO", logo: "🏠", description: "Since 2014", path: "/brands/reo" },
-        { name: "Havells", logo: "💡", description: "Since 2014", path: "/brands/havells" },
-        { name: "Nestle Professional", logo: "🍫", description: "Since 2018", path: "/brands/nestle-profer" },
+        { name: "NESTLE", img: "☕", description: "Since 1985", path: "/brands/nestle" },
+        { name: "REO", img: "🏠", description: "Since 2014", path: "/brands/reo" },
+        { name: "Havells", img: "💡", description: "Since 2014", path: "/brands/havells" },
+        { name: "Nestle Professional", img: "🍫", description: "Since 2018", path: "/brands/nestle-profer" },
       ]
     },  
     {
-      title: "Distributor Superstockists",
+      title: "Super Stockists",
       description: "Premium Lifestyle Brands",
       gradient: "from-purple-500 via-purple-600 to-pink-600",
       bgGradient: "from-purple-50/80 via-pink-50/60 to-rose-50/80",
       shadowColor: "shadow-purple-500/20",
       brands: [
-        { name: "Titan", logo: "⌚", description: "Since 1995", path: "/brands/titan" },
-        { name: "Sonata", logo: "⏰", description: "Since 1998", path: "/brands/sonata" },
-        { name: "Fastrack", logo: "🕶️", description: "Since 1999", path: "/brands/fastrack" },
-        { name: "Polycab", logo: "🎯", description: "Since 2025", path: "/brands/Polycab" },
+        { name: "Titan", img: "⌚", description: "Since 1995", path: "/brands/titan" },
+        { name: "Sonata", img: "⏰", description: "Since 1998", path: "/brands/sonata" },
+        { name: "Fastrack", img: "🕶️", description: "Since 1999", path: "/brands/fastrack" },
+        { name: "Polycab", img: "🎯", description: "Since 2025", path: "/brands/Polycab" },
       ]
     },
     {
@@ -37,11 +37,11 @@ const ClientsSection = () => {
       bgGradient: "from-emerald-50/80 via-teal-50/60 to-green-50/80",
       shadowColor: "shadow-emerald-500/20",
       brands: [
-        { name: "Titan World", logo: "🌟", description: "Since 2008-2018", path: "/brands/titan-world" },
-        { name: "Helios", logo: "⚡", description: "Since 2018", path: "/brands/helios" },
-        { name: "Fastrack Store", logo: "🚀", description: "Since 2018", path: "/brands/fastrack-store" },
-        { name: "Nescafe Kiosks", logo: "☕", description: "Since 2023", path: "/brands/nescafe-kiosks" },
-        { name: "Mia by Tanishq", logo: "💎", description: "Since 2024", path: "/brands/mia" },
+        { name: "Titan World", img: "🌟", description: "Since 2008-2018", path: "/brands/titan-world" },
+        { name: "Helios", img: "⚡", description: "Since 2018", path: "/brands/helios" },
+        { name: "Fastrack Store", img: "🚀", description: "Since 2018", path: "/brands/fastrack-store" },
+        { name: "Nescafe Kiosks", img: "☕", description: "Since 2023", path: "/brands/nescafe-kiosks" },
+        { name: "Mia by Tanishq", img: "💎", description: "Since 2024", path: "/brands/mia" },
       ]
     }
   ];
@@ -127,7 +127,7 @@ const ClientsSection = () => {
                       {/* Content */}
                       <div className="relative z-10">
                         <div className="text-5xl mb-6 transform group-hover/card:scale-125 transition-all duration-500 filter drop-shadow-lg">
-                          {brand.logo}
+                          {brand.img}
                         </div>
                         <h4 className="font-bold text-gray-900 text-xl mb-3 group-hover/card:text-gray-800 transition-colors duration-300 tracking-wide">
                           {brand.name}
