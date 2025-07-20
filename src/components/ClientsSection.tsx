@@ -11,10 +11,10 @@ const ClientsSection = () => {
       bgGradient: "from-blue-50/80 via-indigo-50/60 to-cyan-50/80",
       shadowColor: "shadow-blue-500/20",
       brands: [
-        { name: "NESTLE", img: "☕", description: "Since 1985", path: "/brands/nestle" },
-        { name: "REO", img: "🏠", description: "Since 2014", path: "/brands/reo" },
-        { name: "Havells", img: "💡", description: "Since 2014", path: "/brands/havells" },
-        { name: "Nestle Professional", img: "🍫", description: "Since 2018", path: "/brands/nestle-profer" },
+        { name: "NESTLE", img: "/assets/brands/Nestle.png", description: "Since 1985", path: "/brands/nestle" },
+        { name: "REO", img: "/assets/brands/Reo.png", description: "Since 2014", path: "/brands/reo" },
+        { name: "Havells", img: "/assets/brands/Havells.png", description: "Since 2014", path: "/brands/havells" },
+        { name: "Nestle Professional", img: "/assets/brands/Nestle_Prof.png", description: "Since 2018", path: "/brands/nestle-profer" },
       ]
     },  
     {
@@ -24,7 +24,7 @@ const ClientsSection = () => {
       bgGradient: "from-purple-50/80 via-pink-50/60 to-rose-50/80",
       shadowColor: "shadow-purple-500/20",
       brands: [
-        { name: "Titan", img: "⌚", description: "Since 1995", path: "/brands/titan" },
+        { name: "Titan", img: "/assets/brands/Titan.png", description: "Since 1995", path: "/brands/titan" },
         { name: "Sonata", img: "⏰", description: "Since 1998", path: "/brands/sonata" },
         { name: "Fastrack", img: "🕶️", description: "Since 1999", path: "/brands/fastrack" },
         { name: "Polycab", img: "🎯", description: "Since 2025", path: "/brands/Polycab" },
@@ -108,45 +108,45 @@ const ClientsSection = () => {
               
               {/* Enhanced Brands Grid */}
               <div className="grid lg:grid-cols-4 gap-8 mb-20">
-                {category.brands.map((brand, brandIndex) => (
-                  <Link 
-                    key={brand.name}
-                    to={brand.path}
-                    className="group/card  cursor-pointer"
-                    style={{ 
-                      animation: 'fadeInUp 1s ease-out forwards'
-                    }}
-                  >
-                    <div className={`bg-gradient-to-br ${category.bgGradient} backdrop-blur-sm rounded-3xl p-8 shadow-xl group-hover/card:shadow-2xl ${category.shadowColor} transition-all duration-700 border border-white/50 relative overflow-hidden`}>
-                      {/* Enhanced hover effect overlay */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover/card:opacity-15 transition-all duration-700 rounded-3xl`}></div>
-                      
-                      {/* Shimmer effect */}
-                      <div className="absolute inset-0 -top-10 -left-10 w-20 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 transform -translate-x-full group-hover/card:translate-x-full transition-transform duration-1000"></div>
-                      
-                      {/* Content */}
-                      <div className="relative z-10">
-                        <div className="text-5xl mb-6 transform group-hover/card:scale-125 transition-all duration-500 filter drop-shadow-lg">
-                          {brand.img}
-                        </div>
-                        <h4 className="font-bold text-gray-900 text-xl mb-3 group-hover/card:text-gray-800 transition-colors duration-300 tracking-wide">
-                          {brand.name}
-                        </h4>
-                        <p className="text-sm text-gray-600 group-hover/card:text-gray-700 leading-relaxed font-medium">
-                          {brand.description}
-                        </p>
-                        
-                        {/* Enhanced arrow indicator */}
-                        <div className="mt-6 opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform translate-x-4 group-hover/card:translate-x-0">
-                          <div className="flex items-center gap-2 text-gray-600">
-                            <span className="text-xs font-medium">Explore</span>
-                            <ArrowRight className="w-4 h-4 transform group-hover/card:translate-x-1 transition-transform duration-300" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
+              {category.brands.map((brand) => (
+  <Link 
+    key={brand.name}
+    to={brand.path}
+    className="group/card cursor-pointer"
+  >
+    <div className={`bg-gradient-to-br ${category.bgGradient} backdrop-blur-sm rounded-3xl p-8 shadow-xl group-hover/card:shadow-2xl ${category.shadowColor} transition-all duration-700 border border-white/50 relative overflow-hidden`}>
+      <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover/card:opacity-15 transition-all duration-700 rounded-3xl`}></div>
+      <div className="absolute inset-0 -top-10 -left-10 w-20 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 transform -translate-x-full group-hover/card:translate-x-full transition-transform duration-1000"></div>
+      
+      <div className="relative z-10">
+        {/* Replace emoji with image */}
+        <div className="mb-6 transform group-hover/card:scale-110 transition-all duration-500">
+          <img
+            src={brand.img}
+            alt={brand.name}
+            className="h-16 mx-auto object-contain drop-shadow-lg"
+            loading="lazy"
+          />
+        </div>
+        
+        <h4 className="font-bold text-gray-900 text-xl mb-3 group-hover/card:text-gray-800 transition-colors duration-300 tracking-wide">
+          {brand.name}
+        </h4>
+        <p className="text-sm text-gray-600 group-hover/card:text-gray-700 leading-relaxed font-medium">
+          {brand.description}
+        </p>
+
+        <div className="mt-6 opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform translate-x-4 group-hover/card:translate-x-0">
+          <div className="flex items-center gap-2 text-gray-600">
+            <span className="text-xs font-medium">Explore</span>
+            <ArrowRight className="w-4 h-4 transform group-hover/card:translate-x-1 transition-transform duration-300" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </Link>
+))}
+
               </div>
               
               {/* Enhanced Category separator */}

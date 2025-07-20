@@ -21,8 +21,7 @@ const Footer = () => {
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Brands</a></li>
+                <li><a href="#section2" className="hover:text-white transition-colors">Brands</a></li>
               </ul>
             </div>
 
@@ -30,7 +29,6 @@ const Footer = () => {
               <h4 className="font-semibold mb-4">Our Brands</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Brands</a></li>
               </ul>
             </div>
@@ -38,14 +36,15 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>+91-98765 43210</li>
-                <li>contact@superstockpro.com</li>
+                <li>0751-2450303, 2371408</li>
+                <li>9826253253, 9329468800</li>
+                <li>ktplanuj@yahoo.co.in</li>
               </ul>
             </div>
           </div>
       
         <div className="border-t border-gray-800 mt-4 pt-8 text-gray-400 text-center">
-          <p>&copy; 2024 SuperStock Pro. All rights reserved.</p>
+          <p>&copy; 2025 SuperStock Pro. All rights reserved.</p>
         </div>
       </div>
     </footer>
