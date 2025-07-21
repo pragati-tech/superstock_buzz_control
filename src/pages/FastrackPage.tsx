@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Zap, Users, Sparkles } from "lucide-react";
+import Fastrackimg from "../assets/brands/Fastrack.png"
 
 const FastrackPage = () => {
   return (
@@ -18,12 +19,18 @@ const FastrackPage = () => {
         </Link>
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <img
+            src= {Fastrackimg}
+            alt =""
+            className="h-20 mx-auto  object-contain drop-shadow-lg"
+            loading="lazy"
+          />
+          {/* <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Fastrack
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          </h1> */}
+          {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Cool and trendy lifestyle accessories designed for the energetic youth
-          </p>
+          </p> */}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
