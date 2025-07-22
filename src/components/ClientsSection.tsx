@@ -199,7 +199,7 @@ const ClientsSection = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
                 {[
-                  { number: "25+", label: "Premium Brands" },
+                  { number: "15+", label: "Premium Brands" },
                   { number: "3", label: "Business Verticals" },
                   { number: "100%", label: "Customer Satisfaction" }
                 ].map((stat) => (
@@ -222,4 +222,3 @@ const ClientsSection = () => {
 };
 
 export default ClientsSection;
-  
