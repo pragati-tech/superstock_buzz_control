@@ -32,7 +32,7 @@ const ClientsSection = () => {
         { name: "NESTLE", img: NestleImg, description: "Since 1985", path: "/brands/nestle" },
         { name: "REO", img: ReoImg, description: "Since 2014", path: "/brands/reo" },
         { name: "Havells", img: HavellsImg, description: "Since 2014", path: "/brands/havells" },
-        { name: "Nestle Professional", img: NestleProfImg, description: "Since 2018", path: "/brands/nestle-professional" },
+        { name: "Nestle Professional", img: NestleProfImg, description: "Since 2018", path: "/brands/nestle-profer" },
       ]
     },
     {
@@ -138,7 +138,7 @@ const ClientsSection = () => {
                       key={brand.name}
                       to={brand.path}
                       className="group/card cursor-pointer"
-                    >
+                    > 
                       <div className={`bg-gradient-to-br ${category.bgGradient} backdrop-blur-sm rounded-3xl p-8 shadow-xl group-hover/card:shadow-2xl ${category.shadowColor} transition-all duration-700 border border-white/50 relative overflow-hidden`}>
                         <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover/card:opacity-15 transition-all duration-700 rounded-3xl`}></div>
                         <div className="absolute inset-0 -top-10 -left-10 w-20 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 transform -translate-x-full group-hover/card:translate-x-full transition-transform duration-1000"></div>

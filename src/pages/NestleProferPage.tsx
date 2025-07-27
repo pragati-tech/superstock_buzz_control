@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ChefHat, Building, Award } from "lucide-react";
+import Nestleimg from "../assets/brands/Nestle_Prof.png"
 
 const NestleProferPage = () => {
   return (
@@ -18,12 +19,17 @@ const NestleProferPage = () => {
         </Link>
 
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">🍫</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <img
+            src= {Nestleimg}
+            alt =""
+            className="h-20 mx-auto bject-contain drop-shadow-lg mb-2"
+            loading="lazy"
+          />
+          <h1 className="text-xl md:text-4xl font-bold text-gray-900 mb-2">
             Nestle Professional
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Professional food service solutions for businesses and institutions
+          <p className="text-xl text-gray-600 max-w-5xl mx-auto">
+            We have been a Nestle Professional distributor since 2018. We provide coffee/vending machines and services in this area. We also supply them to restaurants, hotels and colleges, and have Nescafe kiosks with us.
           </p>
         </div>
 
@@ -83,8 +89,45 @@ const NestleProferPage = () => {
           </Card>
         </div>
       </div>
+    <footer className="bg-gray-900 text-white py-5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center mb-8">
+          <div className="flex items-center space-x-2 mb-4  ">
+            <div className="w-8 h-8 business-gradient rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">SS</span>
+            </div>
+            <span className="text-3xl font-bold">SuperStock Pro</span>
+          </div>
+          <p className="text-center text-gray-400 w-100">
+            Your trusted superstockist partner for premium brands. 
+            Delivering excellence through innovative solutions and seamless communication.
+          </p>
+        </div>
+          <div className="grid md:grid-cols-2 gap-8 text-center">
+            
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#section2" className="hover:text-white transition-colors">Brands</a></li>
+              </ul>
+            </div>
 
-      <Footer />
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><b>Head Office : </b>3rd Floor, Rukmani Mansion, Sarafa Bazaar,<br /> Lashkar, Gwalior-474001</li>
+                <li><b>Tel : </b>0751-2450303, 2371408</li>
+                <li>ktplanuj@yahoo.co.in</li>
+              </ul>
+            </div>
+          </div>
+      
+        <div className="border-t border-gray-800 mt-4 pt-8 text-gray-400 text-center">
+          <p>&copy; 2025 SuperStock Pro. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
     </div>
   );
 };

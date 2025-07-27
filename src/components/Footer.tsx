@@ -37,8 +37,8 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>0751-2450303, 2371408</li>
-                <li>9826253253, 9329468800</li>
+                <li><b>Head Office : </b>3rd Floor, Rukmani Mansion, Sarafa Bazaar, Lashkar, Gwalior-474001</li>
+                <li><b>Tel : </b>0751-2450303, 2371408</li>
                 <li>ktplanuj@yahoo.co.in</li>
               </ul>
             </div>
