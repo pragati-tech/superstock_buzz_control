@@ -139,32 +139,34 @@ const ClientsSection = () => {
                       to={brand.path}
                       className="group/card cursor-pointer"
                     > 
-                      <div className={`bg-gradient-to-br ${category.bgGradient} backdrop-blur-sm rounded-3xl p-8 shadow-xl group-hover/card:shadow-2xl ${category.shadowColor} transition-all duration-700 border border-white/50 relative overflow-hidden`}>
+                      <div className={`bg-gradient-to-br ${category.bgGradient} backdrop-blur-sm rounded-3xl p-0 shadow-xl group-hover/card:shadow-2xl ${category.shadowColor} transition-all duration-700 border border-white/50 relative overflow-hidden h-48`}>
                         <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover/card:opacity-15 transition-all duration-700 rounded-3xl`}></div>
                         <div className="absolute inset-0 -top-10 -left-10 w-20 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 transform -translate-x-full group-hover/card:translate-x-full transition-transform duration-1000"></div>
 
-                        <div className="relative z-10">
-                          <div className="mb-6 transform group-hover/card:scale-110 transition-all duration-500">
+                        {/* Description in top-right corner */}
+                        <div className="absolute top-3 right-3 z-20">
+                          <p className="text-xs text-gray-500 bg-white/70 backdrop-blur-sm px-2 py-1 rounded-md font-light">
+                            {brand.description}
+                          </p>
+                        </div>
+
+                        {/* Centered Image */}
+                        <div className="relative z-10 h-full flex items-center justify-center p-8">
+                          <div className="transform group-hover/card:scale-110 transition-all duration-500">
                             <img
                               src={brand.img}
                               alt={brand.name}
-                              className="h-12 object-contain drop-shadow-lg"
+                              className="h-16 w-auto object-contain drop-shadow-lg mx-auto"
                               loading="lazy"
                             />
                           </div>
+                        </div>
 
-                          <h4 className="font-bold text-gray-900 text-xl mb-3 group-hover/card:text-gray-800 transition-colors duration-300 tracking-wide">
-                            {brand.name}
-                          </h4>
-                          <p className="text-sm text-gray-600 group-hover/card:text-gray-700 leading-relaxed font-medium">
-                            {brand.description}
-                          </p>
-
-                          <div className="mt-6 opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform translate-x-4 group-hover/card:translate-x-0">
-                            <div className="flex items-center gap-2 text-gray-600">
-                              <span className="text-xs font-medium">Explore</span>
-                              <ArrowRight className="w-4 h-4 transform group-hover/card:translate-x-1 transition-transform duration-300" />
-                            </div>
+                        {/* Hover effect for exploration */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/card:opacity-100 transition-all duration-500 translate-y-4 group-hover/card:translate-y-0 z-20">
+                          <div className="flex items-center gap-2 text-gray-600 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span className="text-xs font-medium">Explore</span>
+                            <ArrowRight className="w-3 h-3 transform group-hover/card:translate-x-1 transition-transform duration-300" />
                           </div>
                         </div>
                       </div>
