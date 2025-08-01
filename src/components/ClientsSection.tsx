@@ -65,51 +65,32 @@ const ClientsSection = () => {
   ];
 
   return (
-    <section id="section2" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
-      {/* Dark Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-        <div className="absolute inset-0 bg-gradient-to-r from-business-900/20 via-transparent to-business-800/20"></div>
+    <section id="section2" className="py-20 bg-gray-900 relative overflow-hidden">
+      {/* Subtle animated background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+          backgroundSize: '60px 60px'
+        }}></div>
       </div>
 
-      {/* Glowing Orbs */}
-      <div className="absolute top-20 left-20 w-64 h-64 bg-business-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-business-600/10 rounded-full blur-3xl animate-[pulse_3s_ease-in-out_infinite]"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-business-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-
-      {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-business-400 to-business-600 rounded-full opacity-20 animate-bounce"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 2}s`
-            }}
-          />
-        ))}
-      </div>
+      {/* Single subtle glow */}
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-business-500/5 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-business-500/20 to-business-600/20 backdrop-blur-sm px-6 py-3 rounded-full text-business-300 text-sm font-medium mb-4 shadow-lg border border-business-500/30">
-            <Sparkles className="w-5 h-5 animate-spin text-business-400" style={{ animationDuration: '3s' }} />
-            <span className="font-semibold">Premium Partnerships</span>
-            <Star className="w-4 h-4 text-business-400" />
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-business-500/10 backdrop-blur-sm px-4 py-2 rounded-full text-business-400 text-sm font-medium mb-6 border border-business-500/20">
+            <Sparkles className="w-4 h-4" />
+            <span>Premium Partnerships</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight mb-8">
-            <span className="bg-gradient-to-r from-white via-business-300 to-white bg-clip-text text-transparent">Trusted by</span>
-            <br />
-            <span className="bg-gradient-to-r from-business-400 via-business-500 to-business-600 bg-clip-text text-transparent">
-              Premium Brands
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            Trusted by 
+            <span className="bg-gradient-to-r from-business-400 to-business-500 bg-clip-text text-transparent"> Premium Brands</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-5xl mx-auto leading-relaxed font-light">
-            We serve as authorized partners across three key business verticals, delivering excellence 
-            in distribution and retail with <span className="font-semibold text-business-400">unmatched commitment</span> to quality and service.
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Authorized partners across three key business verticals, delivering excellence 
+            in distribution and retail with <span className="text-business-400 font-medium">unmatched commitment</span>.
           </p>
         </div>
 
@@ -126,51 +107,47 @@ const ClientsSection = () => {
             return (
               <div key={category.title} id={sectionId} className="relative group">
                 <div className="text-center mb-8">
-                  <div className={`inline-block bg-gradient-to-r ${category.gradient} text-white px-8 py-4 rounded-2xl font-bold text-2xl mb-2 shadow-2xl ${category.shadowColor} transform hover:scale-105 transition-all duration-300 relative overflow-hidden border border-white/20`}>
-                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10 flex items-center gap-3">
-                      <Zap className="w-6 h-6" />
+                  <div className={`inline-block bg-gradient-to-r ${category.gradient} text-white px-6 py-3 rounded-xl font-semibold text-xl shadow-lg hover:scale-105 transition-all duration-300`}>
+                    <span className="flex items-center gap-2">
+                      <Zap className="w-5 h-5" />
                       {category.title}
                     </span>
                   </div>
                 </div>
 
                 {/* Brand Cards */}
-                <div className="grid lg:grid-cols-4 gap-8 mb-20">
+                <div className="grid lg:grid-cols-4 gap-6 mb-16">
                   {category.brands.map((brand) => (
                     <Link 
                       key={brand.name}
                       to={brand.path}
                       className="group/card cursor-pointer"
                     > 
-                      <div className="bg-gradient-to-br from-gray-800/80 via-gray-900/60 to-black/80 backdrop-blur-sm rounded-3xl p-0 shadow-xl group-hover/card:shadow-2xl group-hover/card:shadow-business-500/25 transition-all duration-700 border border-business-500/30 relative overflow-hidden h-48">
-                        <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover/card:opacity-20 transition-all duration-700 rounded-3xl`}></div>
-                        <div className="absolute inset-0 -top-10 -left-10 w-20 h-full bg-gradient-to-r from-transparent via-business-400/30 to-transparent rotate-12 transform -translate-x-full group-hover/card:translate-x-full transition-transform duration-1000"></div>
-
+                      <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700/50 hover:border-business-500/30 relative overflow-hidden h-40 flex flex-col">
                         {/* Description in top-right corner */}
                         <div className="absolute top-3 right-3 z-20">
-                          <p className="text-xs text-gray-400 bg-gray-800/70 backdrop-blur-sm px-2 py-1 rounded-md font-light border border-business-500/20">
+                          <p className="text-xs text-gray-500 bg-gray-700/50 px-2 py-1 rounded-md">
                             {brand.description}
                           </p>
                         </div>
 
                         {/* Centered Image */}
-                        <div className="relative z-10 h-full flex items-center justify-center p-8">
-                          <div className="transform group-hover/card:scale-110 transition-all duration-500">
+                        <div className="flex-1 flex items-center justify-center">
+                          <div className="transform group-hover/card:scale-110 transition-all duration-300">
                             <img
                               src={brand.img}
                               alt={brand.name}
-                              className="h-16 w-auto object-contain drop-shadow-lg mx-auto"
+                              className="h-12 w-auto object-contain opacity-90 group-hover/card:opacity-100"
                               loading="lazy"
                             />
                           </div>
                         </div>
 
                         {/* Hover effect for exploration */}
-                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/card:opacity-100 transition-all duration-500 translate-y-4 group-hover/card:translate-y-0 z-20">
-                          <div className="flex items-center gap-2 text-business-300 bg-gray-800/80 backdrop-blur-sm px-3 py-1 rounded-full border border-business-500/30">
-                            <span className="text-xs font-medium">Explore</span>
-                            <ArrowRight className="w-3 h-3 transform group-hover/card:translate-x-1 transition-transform duration-300" />
+                        <div className="opacity-0 group-hover/card:opacity-100 transition-all duration-300 text-center">
+                          <div className="flex items-center justify-center gap-1 text-business-400 text-sm">
+                            <span>Explore</span>
+                            <ArrowRight className="w-3 h-3" />
                           </div>
                         </div>
                       </div>
@@ -183,38 +160,33 @@ const ClientsSection = () => {
         </div>
 
         {/* Footer Section */}
-        <div className="mt-20">
-          <div className="bg-gradient-to-r from-gray-800/90 via-gray-900/90 to-black/90 backdrop-blur-lg rounded-3xl p-16 border border-business-500/30 shadow-2xl shadow-business-500/10 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-business-500/10 via-business-600/5 to-business-700/10 rounded-3xl"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-business-400/10 to-transparent animate-pulse rounded-3xl"></div>
-
-            <div className="relative z-10 text-center">
-              <div className="inline-flex items-center gap-3 bg-business-500/20 backdrop-blur-sm px-6 py-3 rounded-full text-business-300 text-sm font-semibold mb-8 shadow-lg border border-business-500/30">
-                <Sparkles className="w-5 h-5 animate-spin text-business-400" style={{ animationDuration: '4s' }} />
+        <div className="mt-16">
+          <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-12 border border-gray-700/50 relative">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 bg-business-500/10 px-4 py-2 rounded-full text-business-400 text-sm font-medium mb-6 border border-business-500/20">
+                <Sparkles className="w-4 h-4" />
                 <span>Partnership Excellence</span>
               </div>
-              <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-8 leading-tight tracking-tight">
-                <span className="bg-gradient-to-r from-white via-business-300 to-white bg-clip-text text-transparent">Comprehensive Solutions Across</span>
-                <br />
-                <span className="bg-gradient-to-r from-business-400 via-business-500 to-business-600 bg-clip-text text-transparent mt-2 block">Diverse Market Segments</span>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Comprehensive Solutions Across
+                <span className="block bg-gradient-to-r from-business-400 to-business-500 bg-clip-text text-transparent">Diverse Market Segments</span>
               </h3>
-              <p className="text-gray-300 text-xl max-w-5xl mx-auto leading-relaxed mb-12 font-light">
+              <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed mb-10">
                 From premium distribution partnerships to exclusive retail experiences, we deliver 
-                comprehensive solutions that ensure brand excellence and customer satisfaction across 
-                every touchpoint in the value chain.
+                comprehensive solutions that ensure brand excellence and customer satisfaction.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                  { number: "15+", label: "Premium Brands" },
+                  { number: "25+", label: "Premium Brands" },
                   { number: "3", label: "Business Verticals" },
                   { number: "100%", label: "Customer Satisfaction" }
                 ].map((stat) => (
-                  <div key={stat.label} className="text-center group transform hover:scale-105 transition-all duration-300">  
-                    <div className="text-4xl font-bold text-business-400 mb-3 group-hover:text-business-300 transition-colors duration-300">
+                  <div key={stat.label} className="text-center">  
+                    <div className="text-3xl font-bold text-business-400 mb-2">
                       {stat.number}
                     </div>
-                    <div className="text-gray-300 font-semibold text-lg tracking-wide">
+                    <div className="text-gray-400 font-medium">
                       {stat.label}
                     </div>
                   </div>
