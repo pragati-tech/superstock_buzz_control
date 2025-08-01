@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, Star, Users } from "lucide-react";
-import Sonataimg from "../assets/brands/sonata.png"
+// import Sonataimg from "../assets/brands/sonata.png"
 
 const SonataPage = () => {
   return (
