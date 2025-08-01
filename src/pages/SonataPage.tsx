@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, Star, Users } from "lucide-react";
-import Sonataimg from "../assets/brands/sonata.png"
+// import Sonataimg from "../assets/brands/sonata.png"
 
 const SonataPage = () => {
   return (
@@ -20,7 +20,7 @@ const SonataPage = () => {
 
         <div className="text-center mb-12">
           <img
-            src= {Sonataimg}
+            // src= {Sonataimg}
             alt =""
             className="h-20 mx-auto bject-contain drop-shadow-lg mb-2"
             loading="lazy"
