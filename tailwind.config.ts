@@ -102,6 +102,14 @@ export default {
 				'slide-in': {
 					from: { transform: 'translateX(-100%)' },
 					to: { transform: 'translateX(0)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'scale-x': {
+					'0%': { transform: 'scaleX(0)' },
+					'100%': { transform: 'scaleX(1)' }
 				}
 			},
 			animation: {
