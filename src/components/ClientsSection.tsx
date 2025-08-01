@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, Star, Zap } from "lucide-react";
 // Distributor
 import NestleImg from '../assets/brands/Nestle.png';
 import ReoImg from '../assets/brands/Reo.png';
-import HavellsImg from '../assets/brands/havells.png';
+import HavellsImg from '../assets/brands/Havells.png';
 import NestleProfImg from '../assets/brands/nestle_profer.png';
 
 // Super Stockists
