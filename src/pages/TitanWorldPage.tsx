@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Star, Crown, Award } from "lucide-react";
-import TitanWorldimg from "../assets/brands/Titan_World.png"
+import TitanWorldimg from "../assets/brands/titan_world.jpg"
 
 const TitanWorldPage = () => {
   return (

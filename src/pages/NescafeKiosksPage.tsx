@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Coffee, MapPin, Clock } from "lucide-react";
-import Nescafeimg from "../assets/brands/Nescafe.png"
+import Nescafeimg from "../assets/brands/nestle.png"
 
 const NescafeKiosksPage = () => {
   return (

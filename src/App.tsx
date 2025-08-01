@@ -1,9 +1,11 @@
 
 import { Toaster } from "@/components/ui/toaster";
+import { useState, useEffect } from "react";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ScrollToTop from "@/components/ScrollToTop"; 
+import Loader from "@/components/loader";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -22,6 +24,8 @@ import FastrackStorePage from "./pages/FastrackStorePage";
 import NescafeKiosksPage from "./pages/NescafeKiosksPage";
 
 const queryClient = new QueryClient();
+
+
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -50,6 +54,6 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+);  
 
 export default App;

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Zap, Clock, Store } from "lucide-react";
 import Heliosimg from "../assets/brands/Helios.png"
 
-const HeliosPage = () => {
+const HeliosPage = () => {  
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <Navigation />
