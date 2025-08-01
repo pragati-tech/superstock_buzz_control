@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Package, TrendingUp, Shield, Zap } from "lucide-react";
+import { ArrowRight, Store, MapPin, Wrench, Users } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -32,49 +32,49 @@ const HeroSection = () => {
           </span>
           <br />
           <span className="bg-gradient-to-r from-business-400 via-business-500 to-business-600 bg-clip-text text-transparent">
-            SuperStockist
+            Kiosks & Stores
           </span>
           <br />
           <span className="bg-gradient-to-r from-white via-business-300 to-white bg-clip-text text-transparent">
-            Solutions
+            Setup
           </span>
         </h1>
 
         {/* Enhanced Subtitle */}
         <p className="text-xl md:text-2xl text-gray-300 mb-16 max-w-4xl mx-auto leading-relaxed animate-fade-in font-light">
-          Transform your business with our comprehensive SuperStockist platform. 
+          Expert kiosk and store setup solutions for <span className="text-business-400 font-bold">25+ premium brands</span>. 
           <br className="hidden md:block" />
-          Connecting premium brands like <span className="text-business-400 font-medium">Tanishq</span>, <span className="text-business-400 font-medium">Titan</span>, and <span className="text-business-400 font-medium">Mia</span> with intelligent inventory management and seamless operations.
+          From <span className="text-business-400 font-medium">Tanishq</span> and <span className="text-business-400 font-medium">Titan</span> to <span className="text-business-400 font-medium">Nescafe</span> and <span className="text-business-400 font-medium">Havells</span> - we bring brands to life with strategic retail setups.
         </p>
 
         {/* Visual Summary Icons */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 max-w-3xl mx-auto">
           <div className="flex flex-col items-center group animate-fade-in">
             <div className="w-16 h-16 bg-gradient-to-br from-business-500/20 to-business-600/20 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 border border-business-500/30">
-              <Package className="w-8 h-8 text-business-400" />
+              <Store className="w-8 h-8 text-business-400" />
             </div>
-            <span className="text-sm text-gray-400 font-medium">Smart Inventory</span>
+            <span className="text-sm text-gray-400 font-medium">Store Setup</span>
           </div>
           
           <div className="flex flex-col items-center group animate-fade-in">
             <div className="w-16 h-16 bg-gradient-to-br from-business-500/20 to-business-600/20 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 border border-business-500/30">
-              <TrendingUp className="w-8 h-8 text-business-400" />
+              <MapPin className="w-8 h-8 text-business-400" />
             </div>
-            <span className="text-sm text-gray-400 font-medium">Sales Growth</span>
+            <span className="text-sm text-gray-400 font-medium">Strategic Locations</span>
           </div>
           
           <div className="flex flex-col items-center group animate-fade-in">
             <div className="w-16 h-16 bg-gradient-to-br from-business-500/20 to-business-600/20 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 border border-business-500/30">
-              <Shield className="w-8 h-8 text-business-400" />
+              <Wrench className="w-8 h-8 text-business-400" />
             </div>
-            <span className="text-sm text-gray-400 font-medium">Secure Platform</span>
+            <span className="text-sm text-gray-400 font-medium">Expert Installation</span>
           </div>
           
           <div className="flex flex-col items-center group animate-fade-in">
             <div className="w-16 h-16 bg-gradient-to-br from-business-500/20 to-business-600/20 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 border border-business-500/30">
-              <Zap className="w-8 h-8 text-business-400" />
+              <Users className="w-8 h-8 text-business-400" />
             </div>
-            <span className="text-sm text-gray-400 font-medium">Real-time Sync</span>
+            <span className="text-sm text-gray-400 font-medium">25+ Brands</span>
           </div>
         </div>
 
